@@ -31,7 +31,7 @@ function Form() {
     params.append("FLD40", selectedState);
   
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://mkcerp.com/OnlineApplication/MemRegApi.aspx",
+      "https://mkcerp.com/OnlineApplication/MemRegApi.aspx",
       {
         method: "POST",
         headers: {
