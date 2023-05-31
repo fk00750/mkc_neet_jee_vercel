@@ -1,52 +1,175 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 
+/**
+ * Refactor the code according to following instructions:
+ * Enter the URL: http://localhost:3001/api/OnlineApplication/MemRegApi.aspx 
+
+Go to the "Body" tab below the URL field.
+
+Select the "x-www-form-urlencoded" option.
+
+Add the following key-value pairs 
+*/
 function Form() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const courses = {
-      "JEE(MAIN+ADVANCE)": 459,
-      "NEET(UG)": 460,
-      "PRE Foundation (9 and 10)": 467,
-      "PRE Foundation (10)": 468,
-    };
-
-    const selectedCourseCode = courses[selectedCourse];
-
-    const params = new URLSearchParams();
-    params.append("CLIENTID", "1");
-    params.append("FLD1", "1");
-    params.append("FLD2", "1");
-    params.append("FLD3", "1");
-    params.append("FLD9", name);
-    params.append("FLD16", phoneNumber);
-    params.append("FLD19", selectedCourseCode);
-    params.append("FLD23", selectedCourse);
-    params.append("FLD40", selectedState);
-
-    fetch("/api/OnlineApplication/MemRegApi.aspx", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+    const Courses = [
+      {
+        name: "JEE(MAIN+ADVANCE)",
+        code: "459",
+        batchId: "809",
       },
-      body: params.toString(),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        // Handle the response here
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors here
-        console.error(error);
-      });
+      {
+        name: "NEET(UG)",
+        code: "460",
+        batchId: "809",
+      },
+      {
+        name: "PRE Foundation (9 and 10)",
+        code: "467",
+        batchId: "809",
+      },
+      {
+        name: "PRE Foundation (10)",
+        code: "468",
+        batchId: "809",
+      },
+    ];
+
+    const selectedCourseObj = Courses.find(
+      (course) => course.name === selectedCourse
+    );
+
+    if (selectedCourseObj) {
+      const selectedCourseCode = selectedCourseObj.code;
+      const selectedCourseBatchId = selectedCourseObj.batchId;
+
+      const details = {
+        CLIENTID: "1",
+        FLD1: "1",
+        FLD2: "1",
+        FLD3: "1",
+        FLD9: name,
+        FLD16: phoneNumber,
+        FLD19: selectedCourseCode,
+        FLD23: selectedCourseBatchId,
+        FLD40: selectedState,
+      };
+
+      console.log(details);
+
+      const formBody = Object.entries(details)
+        .map(
+          ([key, value]) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+        )
+        .join("&");
+
+      try {
+        const response = await fetch(
+          "http://localhost:3001/api/OnlineApplication/MemRegApi.aspx",
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formBody,
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.text();
+          console.log(data);
+        } else {
+          console.error("Request failed with status:", response.status);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    } else {
+      console.log(`Course '${selectedCourse}' not found.`);
+    }
   };
+
+  // const handleButtonClick = async (e) => {
+  //   e.preventDefault()
+  //   const courses = {
+  //     "JEE(MAIN+ADVANCE)": "459",
+  //     "NEET(UG)": "460",
+  //     "PRE Foundation (9 and 10)": "467",
+  //     "PRE Foundation (10)": "468",
+  //   };
+
+  //   const Courses = [
+  //     {
+  //       "JEE(MAIN+ADVANCE)": "459",
+  //       Batch_Id: 809,
+  //     },
+  //     {
+  //       "NEET(UG)": "460",
+  //       Batch_Id: 809,
+  //     },
+  //     {
+  //       "PRE Foundation (9 and 10)": "467",
+  //       Batch_Id: 809,
+  //     },
+  //     {
+  //       "PRE Foundation (10)": "468",
+  //       Batch_Id: 809,
+  //     },
+  //   ];
+
+  //   const selectedCourseCode = courses[selectedCourse];
+
+  //   const details = {
+  //     CLIENTID: "1",
+  //     FLD1: "1",
+  //     FLD2: "1",
+  //     FLD3: "1",
+  //     FLD9: name,
+  //     FLD16: phoneNumber,
+  //     FLD19: selectedCourseCode,
+  //     FLD23: selectedCourse,
+  //     FLD40: selectedState,
+  //   };
+
+  //   const url = "http://localhost:3001/api/OnlineApplication/MemRegApi.aspx";
+  //   const body = new URLSearchParams();
+  //   body.append("CLIENTID", "1");
+  //   body.append("FLD1", "1");
+  //   body.append("FLD2", "1");
+  //   body.append("FLD3", "1");
+  //   body.append("FLD9", name);
+  //   body.append("FLD16", phoneNumber);
+  //   body.append("FLD19", selectedCourseCode);
+  //   body.append("FLD23", "value2");
+  //   body.append("FLD40", "value2");
+
+  //   console.log(body);
+
+  //   // try {
+  //   //   const response = await axios.post(url, body.toString(), {
+  //   //     headers: {
+  //   //       "Content-Type": "application/x-www-form-urlencoded",
+  //   //     },
+  //   //   });
+
+  //   //   // Handle the response as needed
+  //   //   console.log(response.data);
+  //   // } catch (error) {
+  //   //   // Handle errors
+  //   //   console.error(error);
+  //   // }
+  // };
 
   return (
     <div className="bg-white mx-auto px-2 py-2 rounded-md mb-16">
