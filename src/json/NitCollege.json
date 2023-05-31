@@ -1,0 +1,192 @@
+[
+  {
+    "NITs": [
+      {
+        "No": 1,
+        "Name": "NIT Trichy",
+        "State": "Tamil Nadu",
+        "Seats": 1036
+      },
+      {
+        "No": 2,
+        "Name": "NIT Karnataka",
+        "State": "Karnataka",
+        "Seats": 981
+      },
+      {
+        "No": 3,
+        "Name": "NIT Rourkela",
+        "State": "Odisha",
+        "Seats": 1234
+      },
+      {
+        "No": 4,
+        "Name": "NIT Warangal",
+        "State": "Telangana",
+        "Seats": 945
+      },
+      {
+        "No": 5,
+        "Name": "NIT Calicut",
+        "State": "Kerala",
+        "Seats": 1244
+      },
+      {
+        "No": 6,
+        "Name": "NIT Nagpur",
+        "State": "Maharashtra",
+        "Seats": 946
+      },
+      {
+        "No": 7,
+        "Name": "NIT Durgapur",
+        "State": "West Bengal",
+        "Seats": 909
+      },
+      {
+        "No": 8,
+        "Name": "NIT Silchar",
+        "State": "Assam",
+        "Seats": 884
+      },
+      {
+        "No": 9,
+        "Name": "NIT Jaipur",
+        "State": "Rajasthan",
+        "Seats": 1074
+      },
+      {
+        "No": 10,
+        "Name": "NIT Allahabad",
+        "State": "Uttar Pradesh",
+        "Seats": 1147
+      },
+      {
+        "No": 11,
+        "Name": "NIT Kurukshetra",
+        "State": "Haryana",
+        "Seats": 1122
+      },
+      {
+        "No": 12,
+        "Name": "NIT Jalandhar",
+        "State": "Punjab",
+        "Seats": 33
+      },
+      {
+        "No": 13,
+        "Name": "NIT Surat",
+        "State": "Gujarat",
+        "Seats": 1091
+      },
+      {
+        "No": 14,
+        "Name": "NIT Meghalaya",
+        "State": "Meghalaya",
+        "Seats": 151
+      },
+      {
+        "No": 15,
+        "Name": "NIT Patna",
+        "State": "Bihar",
+        "Seats": 1173
+      },
+      {
+        "No": 16,
+        "Name": "NIT Bhopal",
+        "State": "Madhya Pradesh",
+        "Seats": 1173
+      },
+      {
+        "No": 17,
+        "Name": "NIT Agartala",
+        "State": "Tripura",
+        "Seats": 1059
+      },
+      {
+        "No": 18,
+        "Name": "NIT Goa",
+        "State": "Goa",
+        "Seats": 108
+      },
+      {
+        "No": 19,
+        "Name": "NIT Jamshedpur",
+        "State": "Jharkhand",
+        "Seats": 751
+      },
+      {
+        "No": 20,
+        "Name": "NIT Andhra Pradesh",
+        "State": "Andhra Pradesh",
+        "Seats": 603
+      },
+      {
+        "No": 21,
+        "Name": "NIT Manipur",
+        "State": "Manipur",
+        "Seats": 180
+      },
+      {
+        "No": 22,
+        "Name": "NIT Hamirpur",
+        "State": "Himachal Pradesh",
+        "Seats": 944
+      },
+      {
+        "No": 23,
+        "Name": "NIT Uttarakhand",
+        "State": "Uttarakhand",
+        "Seats": 80
+      },
+      {
+        "No": 24,
+        "Name": "NIT Raipur",
+        "State": "Chhattisgarh",
+        "Seats": 1197
+      },
+      {
+        "No": 25,
+        "Name": "NIT Puducherry",
+        "State": "Puducherry",
+        "Seats": 243
+      },
+      {
+        "No": 26,
+        "Name": "NIT Srinagar",
+        "State": "Jammu and Kashmir",
+        "Seats": 689
+      },
+      {
+        "No": 27,
+        "Name": "NIT Arunachal Pradesh",
+        "State": "Arunachal Pradesh",
+        "Seats": 190
+      },
+      {
+        "No": 28,
+        "Name": "NIT Sikkim",
+        "State": "Sikkim",
+        "Seats": 161
+      },
+      {
+        "No": 29,
+        "Name": "NIT Delhi",
+        "State": "Delhi",
+        "Seats": 182
+      },
+      {
+        "No": 30,
+        "Name": "NIT Mizoram",
+        "State": "Mizoram",
+        "Seats": 150
+      },
+      {
+        "No": 31,
+        "Name": "NIT Nagaland",
+        "State": "Nagaland",
+        "Seats": 236
+      }
+    ]
+  }
+]

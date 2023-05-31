@@ -1,0 +1,145 @@
+[
+    {
+      "IITs": [
+        {
+          "No": 1,
+          "Name": "IIT Kharagpur",
+          "State": "West Bengal",
+          "Seats": 690
+        },
+        {
+          "No": 2,
+          "Name": "IIT Bombay",
+          "State": "Maharashtra",
+          "Seats": 778
+        },
+        {
+          "No": 3,
+          "Name": "IIT Madras",
+          "State": "Tamil Nadu",
+          "Seats": 505
+        },
+        {
+          "No": 4,
+          "Name": "IIT Kanpur",
+          "State": "Uttar Pradesh",
+          "Seats": 713
+        },
+        {
+          "No": 5,
+          "Name": "IIT Delhi",
+          "State": "Delhi",
+          "Seats": 799
+        },
+        {
+          "No": 6,
+          "Name": "IIT Guwahati",
+          "State": "Assam",
+          "Seats": 702
+        },
+        {
+          "No": 7,
+          "Name": "IIT Roorkee",
+          "State": "Uttarakhand",
+          "Seats": 879
+        },
+        {
+          "No": 8,
+          "Name": "IIT Ropar",
+          "State": "Punjab",
+          "Seats": 297
+        },
+        {
+          "No": 9,
+          "Name": "IIT Bhubaneswar",
+          "State": "Odisha",
+          "Seats": 273
+        },
+        {
+          "No": 10,
+          "Name": "IIT Gandhi Nagar",
+          "State": "Gujarat",
+          "Seats": 194
+        },
+        {
+          "No": 11,
+          "Name": "IIT Hyderabad",
+          "State": "Telangana",
+          "Seats": 294
+        },
+        {
+          "No": 12,
+          "Name": "IIT Jodhpur",
+          "State": "Rajasthan",
+          "Seats": 247
+        },
+        {
+          "No": 13,
+          "Name": "IIT Patna",
+          "State": "Bihar",
+          "Seats": 250
+        },
+        {
+          "No": 14,
+          "Name": "IIT Indore",
+          "State": "Madhya Pradesh",
+          "Seats": 275
+        },
+        {
+          "No": 15,
+          "Name": "IIT Mandi",
+          "State": "Himachal Pradesh",
+          "Seats": 200
+        },
+        {
+          "No": 16,
+          "Name": "IIT (BHU) Varanasi",
+          "State": "Uttar Pradesh",
+          "Seats": 876
+        },
+        {
+          "No": 17,
+          "Name": "IIT Palakkad",
+          "State": "Kerala",
+          "Seats": 260
+        },
+        {
+          "No": 18,
+          "Name": "IIT Tirupati",
+          "State": "Andhra Pradesh",
+          "Seats": 180
+        },
+        {
+          "No": 19,
+          "Name": "IIT (ISM) Dhanbad",
+          "State": "Jharkhand",
+          "Seats": 919
+        },
+        {
+          "No": 20,
+          "Name": "IIT Dharwad",
+          "State": "Karnataka",
+          "Seats": 126
+        },
+        {
+          "No": 21,
+          "Name": "IIT Goa",
+          "State": "Goa",
+          "Seats": 97
+        },
+        {
+          "No": 22,
+          "Name": "IIT Jammu",
+          "State": "Jammu and Kashmir",
+          "Seats": 154
+        },
+        {
+          "No": 23,
+          "Name": "IIT Bhilai",
+          "State": "Chhattisgarh",
+          "Seats": 126
+        }
+      ]
+    }
+  ]
+  

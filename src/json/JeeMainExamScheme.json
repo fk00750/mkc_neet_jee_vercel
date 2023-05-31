@@ -1,0 +1,61 @@
+[
+  {
+    "Paper 1: B.E/B.Tech": {
+      "Subjects": ["Mathematics", "Physics", "Chemistry"],
+      "TypesOfQuestions": [
+        "Objective Type Multiple Choice Questions (MCQs) and Questions for which the answer is a numerical value, with equal weightage to Mathematics Physics, and Chemistry"
+      ],
+      "ModeOfExamination": ["Computer Based Test (CBT) mode only"]
+    }
+  },
+  {
+    "Paper 2A: B. Arch": {
+      "Subjects": [
+        "Part-1:Mathematics",
+        "Part-II: Aptitude Test",
+        "Part-III: Drawing Test"
+      ],
+      "TypesOfQuestions": [
+        {
+          "Part-1": "Objective Type Multiple Choice Questions (MCQ) and Questions for which the answer is a numerical value"
+        },
+        { "Part-II": "Objective Type Multiple Choice Questions (MCQs)" },
+        {
+          "Part-III": "Questions to test drawing Pen and Paper Based (offline) mode to be"
+        }
+      ],
+      "ModeOfExamination": [
+        { "Part-1": "Computer Based Test (CBT) mode only" },
+        { "Part-II": "Computer Based Test (CBT) mode only" },
+        {
+          "Part-III": "Pen and Paper Based (offline) mode to be attempted on a Drawing sheet of A4 size"
+        }
+      ]
+    }
+  },
+  {
+    "Paper 28: B. Planning": {
+      "Subjects": [
+        "Part-1:Mathematics",
+        "Part-II: Aptitude Test",
+        "Part-III: Planning-Based Questions"
+      ],
+      "TypesOfQuestions": [
+        {
+          "Part-1": "Objective Type Multiple Choice Questions (MCQ) and Questions for which the answer is a numerical value"
+        },
+        { "Part-II": "Objective Type Multiple Choice Questions (MCQs)" },
+        {
+          "Part-III": "Objective Type Multiple Choice Questions (MCQs)"
+        }
+      ],
+      "ModeOfExamination": [
+        { "Part-1": "Computer Based Test (CBT) mode only" },
+        { "Part-II": "Computer Based Test (CBT) mode only" },
+        {
+          "Part-III": "Computer Based Test (CBT) mode only"
+        }
+      ]
+    }
+  }
+]

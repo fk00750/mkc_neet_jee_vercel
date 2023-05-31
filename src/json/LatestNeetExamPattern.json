@@ -1,0 +1,38 @@
+[
+  {
+    "Physics": {
+      "Section": [
+        { "Section A": "35 questions" },
+        { "Section B": "15 questions" }
+      ],
+      "Marks": [{ "Section A": "140" }, { "Section B": "40" }]
+    }
+  },
+  {
+    "Botany": {
+      "Section": [
+        { "Section A": "35 questions" },
+        { "Section B": "15 questions" }
+      ],
+      "Marks": [{ "Section A": "140" }, { "Section B": "40" }]
+    }
+  },
+  {
+    "Zoology": {
+      "Section": [
+        { "Section A": "35 questions" },
+        { "Section B": "15 questions" }
+      ],
+      "Marks": [{ "Section A": "140" }, { "Section B": "40" }]
+    }
+  },
+  {
+    "Zoology": {
+      "Section": [
+        { "Section A": "35 questions" },
+        { "Section B": "15 questions" }
+      ],
+      "Marks": [{ "Section A": "140" }, { "Section B": "40" }]
+    }
+  }
+]

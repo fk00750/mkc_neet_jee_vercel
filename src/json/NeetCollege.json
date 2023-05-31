@@ -1,0 +1,126 @@
+[
+  {
+    "NoOfAIIMS": [
+      {
+        "No": "1",
+        "Name": "AllMS New Delhi",
+        "Established": "1956",
+        "STATE/UT": "Delhi"
+      },
+      {
+        "No": "2",
+        "Name": "AIIMS Bhopal",
+        "Established": "2012",
+        "STATE/UT": "Madhya Pradesh"
+      },
+      {
+        "No": "3",
+        "Name": "AIIMS Bhubaneswar",
+        "Established": "2012",
+        "STATE/UT": "Odisha"
+      },
+      {
+        "No": "4",
+        "Name": "AIIMS Jodhpur",
+        "Established": "2012",
+        "STATE/UT": "Rajasthan"
+      },
+      {
+        "No": "5",
+        "Name": "AIIMS Patna",
+        "Established": "2012",
+        "STATE/UT": "Bihar"
+      },
+      {
+        "No": "6",
+        "Name": "AIIMS Raipur",
+        "Established": "2012",
+        "STATE/UT": "Chhattisgarh"
+      },
+      {
+        "No": "7",
+        "Name": "AIIMS Rishikesh",
+        "Established": "2012",
+        "STATE/UT": "Uttarakhand"
+      },
+      {
+        "No": "8",
+        "Name": "AIIMS Rae Bareli",
+        "Established": "2018",
+        "STATE/UT": "Uttar Pradesh"
+      },
+      {
+        "No": "9",
+        "Name": "AIIMS Mangalagiri",
+        "Established": "2018",
+        "STATE/UT": "Andhra Pradesh"
+      },
+      {
+        "No": "10",
+        "Name": "AIIMS Nagpur",
+        "Established": "2018",
+        "STATE/UT": "Maharashtra"
+      },
+      {
+        "No": "11",
+        "Name": "AIIMS Gorakhpur",
+        "Established": "2019",
+        "STATE/UT": "Uttar Pradesh"
+      },
+      {
+        "No": "12",
+        "Name": "AIIMS Kalyani",
+        "Established": "2019",
+        "STATE/UT": "West Bengal"
+      },
+      {
+        "No": "13",
+        "Name": "AIIMS Bathinda",
+        "Established": "2019",
+        "STATE/UT": "Punjab"
+      },
+      {
+        "No": "14",
+        "Name": "AIIMS Guwahati",
+        "Established": "2020",
+        "STATE/UT": "Assam"
+      },
+      {
+        "No": "15",
+        "Name": "AIIMS Vijaypur",
+        "Established": "2020",
+        "STATE/UT": "Jammu and Kashmir"
+      },
+      {
+        "No": "16",
+        "Name": "AIIMS Bilaspur",
+        "Established": "2020",
+        "STATE/UT": "Himachal Pradesh"
+      },
+      {
+        "No": "17",
+        "Name": "AllMS Madurai",
+        "Established": "2021",
+        "STATE/UT": "Tamil Nadu"
+      },
+      {
+        "No": "18",
+        "Name": "AIIMS Deoghar",
+        "Established": "2019",
+        "STATE/UT": "Jharkhand"
+      },
+      {
+        "No": "19",
+        "Name": "AIIMS Rajkot",
+        "Established": "2020",
+        "STATE/UT": "Gujarat"
+      },
+      {
+        "No": "20",
+        "Name": "AIIMS Bibinagar",
+        "Established": "2019",
+        "STATE/UT": "Telegana"
+      }
+    ]
+  }
+]

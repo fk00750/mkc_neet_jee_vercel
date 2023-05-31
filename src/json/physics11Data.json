@@ -1,0 +1,62 @@
+[
+  {
+    "heading": "Unit 1 – Physical World and Measurement",
+    "point1": "Physics: scope and excitement; nature of physical laws; Physics, technology and society Need for measurement – units of measurement; systems of units; SI units, fundamental and derived units.",
+    "point2": "Need for measurement – units of measurement; systems of units; SI units, fundamental and derived units. Length, mass and time measurements; accuracy and precision of measuring instruments; errors in measurement; significant figures.",
+    "point3": "Dimensions of physical quantities, dimensional analysis and its applications."
+  },
+  {
+    "heading": "Unit 2 – Kinematics",
+    "point1": "Frame of reference, motion in a straight line; position-time graph, speed and velocity. Uniform and non-uniform motion, average speed and instantaneous velocity. Uniformly accelerated motion, velocity-time and position-time graphs for uniformly accelerated motion (graphical treatment).",
+    "point2": "Unit vectors. Resolution of a vector in a plane-rectangular component.",
+    "point3": "Scalar and vector products of vectors. Motion in a plane. Cases of uniform velocity and uniform acceleration – projectile motion. Uniform circular motion."
+  },
+  {
+    "heading": "Unit 3 – Laws of Motion",
+    "point1": "Intuitive concept of force. Inertia, Newton’s first law of motion; momentum and Newton’s second law of motion; impulse; Newton’s third law of motion. Law of conservation of linear momentum and its applications.",
+    "point2": "Equilibrium of concurrent forces. Static and kinetic friction, laws of friction, rolling friction, lubrication.",
+    "point3": "Dynamics of uniform circular motion. Centripetal force, examples of circular motion (vehicle on level circular road, vehicle on banked road)."
+  },
+  {
+    "heading": "Unit 4 – Work, Energy and Power",
+    "point1": "Work done by a constant force and variable force; kinetic energy, work-energy theorem, power.",
+    "point2": "Notion of potential energy, potential energy of a spring, conservative forces; conservation of mechanical energy (kinetic and potential energies);",
+    "point3": "non-conservative forces; motion in a vertical circle; elastic and inelastic collisions in one and two dimensions."
+  },
+  {
+    "heading": "Unit 5 – Motion of Systems of Particles and Rigid Body",
+    "point1": "Centre of mass of a two-particle system, momentum conservation and centre of mass motion. Centre of mass of a rigid body; Centre of mass of uniform rod.",
+    "point2": "Momentum of a force – torque, angular momentum, conservation of angular momentum with some examples.",
+    "point3": "Equilibrium of rigid bodies, rigid body rotation and equation of rotational motion, comparison of linear and rotational motions; moment of inertia, radius of gyration. "
+  },
+  {
+    "heading": "Unit 6 – Gravitation",
+    "point1": "Kepler’s law of planetary motion. The universal law of gravitation. Acceleration due to gravity and its variation with altitude and depth.",
+    "point2": "Gravitational potential energy; gravitational potential. Escape velocity.",
+    "point3": "Orbital velocity of a satellite. Geostationary satellites."
+  },
+  {
+    "heading": "Unit 7 – Properties of Bulk matter",
+    "point1": "Elastic behaviour, stress-strain relationship. Hooke’s law, Young’s modulus, bulk modulus, shear, modulus of rigidity, Poisson’s ratio; elastic energy.",
+    "point2": "Viscosity, Stoke’s law, terminal velocity, Reynold’s number, streamline and turbulent flow. Critical velocity, Bernoulli’s theorem and its applications.",
+    "point3": "Surface energy and surface tension, angle of contact, excess of pressure, application of surface tension ideas to drops, bubbles and capillary rise."
+  },
+  {
+    "heading": "Unit 8 – Thermodynamics",
+    "point1": "Thermal equilibrium and definition of temperature (zeroth law of thermodynamics).",
+    "point2": "Heat, work and internal energy. First law of thermodynamics. Isothermal and adiabatic processes.",
+    "point3": "Second law of thermodynamics: reversible and irreversible processes. Heat engines and refrigerators"
+  },
+  {
+    "heading": "Unit 9 – Behaviour of Perfect Gas and Kinetic Theory",
+    "point1": "Equation of state of a perfect gas, work done on compressing a gas.",
+    "point2": "Kinetic theory of gases: Assumptions, concept of pressure. Kinetic energy and temperature; degrees of freedom, law of equipartition of energy (Statement only)",
+    "point3": "Application to specific heat capacities of gases; concept of mean free path."
+  },
+  {
+    "heading": "Unit 10 – Oscillations and Waves",
+    "point1": "Periodic motion-period, frequency, displacement as a function of time. Periodic functions.",
+    "point2": "Simple harmonic motion(SHM) and its equation; phase; oscillations of a spring-restoring force and force constant; energy in SHM – Kinetic and potential energies; simple pendulum – derivation of expression for its time period.",
+    "point3": "Wave motion. Longitudinal and transverse waves, speed of wave motion. Displacement relation for a progressive wave, fundamental mode and harmonics. Beats. Doppler effect."
+  }
+]
