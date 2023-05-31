@@ -9,16 +9,16 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const courses = {
       "JEE(MAIN+ADVANCE)": 459,
       "NEET(UG)": 460,
       "PRE Foundation (9 and 10)": 467,
       "PRE Foundation (10)": 468,
     };
-  
+
     const selectedCourseCode = courses[selectedCourse];
-  
+
     const params = new URLSearchParams();
     params.append("CLIENTID", "1");
     params.append("FLD1", "1");
@@ -29,17 +29,14 @@ function Form() {
     params.append("FLD19", selectedCourseCode);
     params.append("FLD23", selectedCourse);
     params.append("FLD40", selectedState);
-  
-    fetch(
-      "https://mkcerp.com/OnlineApplication/MemRegApi.aspx",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: params.toString(),
-      }
-    )
+
+    fetch("/api/OnlineApplication/MemRegApi.aspx", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: params.toString(),
+    })
       .then((response) => response.text())
       .then((data) => {
         // Handle the response here
@@ -50,7 +47,6 @@ function Form() {
         console.error(error);
       });
   };
-  
 
   return (
     <div className="bg-white mx-auto px-2 py-2 rounded-md mb-16">
