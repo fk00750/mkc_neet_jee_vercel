@@ -250,7 +250,7 @@ function Navbar() {
                     ></path>
                   </svg>
                   {isNeetDropdownOpen && (
-                    <div className="absolute z-10 mt-20 font-normal bg-white rounded-lg divide-y shadow w-44">
+                    <div className="absolute z-10 mt-20 ml-12 lg:ml-0 md:ml-0 font-normal bg-white rounded-lg divide-y shadow w-44">
                       <ul
                         className="py-2 text-sm text-gray-700"
                         aria-labelledby="dropdownLargeButton"
@@ -293,7 +293,7 @@ function Navbar() {
                     ></path>
                   </svg>
                   {isJeeDropdownOpen && (
-                    <div className="absolute z-10 mt-20 font-normal bg-white divide-y rounded-lg shadow w-44">
+                    <div className="absolute z-10 mt-20 ml-16 lg:ml-0 md:ml-0 font-normal bg-white divide-y rounded-lg shadow w-44">
                       <ul
                         className="py-2 text-sm text-gray-700"
                         aria-labelledby="dropdownLargeButton"

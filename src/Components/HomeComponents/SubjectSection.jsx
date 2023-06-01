@@ -51,7 +51,7 @@ function SubjectSection() {
             id="NEET"
             className={`${
               selectedExam === "NEET" ? "bg-blue-500" : "bg-gray-500"
-            } px-4 rounded-sm text-xl text-white`}
+            } px-4 rounded-md text-xl text-white `}
             onClick={handleSubjectChange}
           >
             NEET
@@ -60,7 +60,7 @@ function SubjectSection() {
             id="JEE"
             className={`${
               selectedExam === "JEE" ? "bg-green-500" : "bg-gray-500"
-            } px-4 rounded-sm text-xl text-white`}
+            } px-4 rounded-md text-xl text-white`}
             onClick={handleSubjectChange}
           >
             JEE
@@ -71,7 +71,7 @@ function SubjectSection() {
               selectedExam === "Pre-Foundation"
                 ? "bg-yellow-600"
                 : "bg-gray-500"
-            } px-4 rounded-sm text-xl text-white`}
+            } px-4 rounded-md text-xl text-white`}
             onClick={handleSubjectChange}
           >
             Pre-Foundation

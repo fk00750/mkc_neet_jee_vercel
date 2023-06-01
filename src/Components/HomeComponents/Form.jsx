@@ -1,22 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+import OTPBanner from "../OTPbanner";
 
-/**
- * Refactor the code according to following instructions:
- * Enter the URL: http://localhost:3001/api/OnlineApplication/MemRegApi.aspx 
-
-Go to the "Body" tab below the URL field.
-
-Select the "x-www-form-urlencoded" option.
-
-Add the following key-value pairs 
-*/
 function Form() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
+  const [message, setMessage] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [OTP, setOTP] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,45 +43,65 @@ function Form() {
 
     if (selectedCourseObj) {
       const selectedCourseCode = selectedCourseObj.code;
-      const selectedCourseBatchId = selectedCourseObj.batchId;
 
-      const details = {
-        CLIENTID: "1",
-        FLD1: "1",
-        FLD2: "1",
-        FLD3: "1",
-        FLD9: name,
-        FLD16: phoneNumber,
-        FLD19: selectedCourseCode,
-        FLD23: selectedCourseBatchId,
-        FLD40: selectedState,
+      const data = {
+        sname: name,
+        smobile: phoneNumber,
+        scourse: selectedCourseCode,
+        squery: message,
+        enquirypage: "mkcneet",
+        sstate: selectedState,
       };
 
-      console.log(details);
-
-      const formBody = Object.entries(details)
-        .map(
-          ([key, value]) =>
-            `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-        )
-        .join("&");
+      console.log(data);
 
       try {
         const response = await fetch(
-          "http://localhost:3001/api/OnlineApplication/MemRegApi.aspx",
+          "https://menu.majorkalshiclasses.com/enq/enquiry",
           {
             method: "POST",
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/x-www-form-urlencoded",
+              "Content-Type": "application/json",
             },
-            body: formBody,
+            body: JSON.stringify(data),
           }
         );
 
         if (response.ok) {
           const data = await response.text();
           console.log(data);
+          setName("");
+          setPhoneNumber("");
+          setSelectedCourse("");
+          setSelectedState("");
+          setMessage("");
+
+          // Make a POST request to fetch the OTP
+          try {
+            const response = await fetch(
+              "https://menu.majorkalshiclasses.com/otp",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  mobile: phoneNumber,
+                }),
+              }
+            );
+
+            if (response.ok) {
+              const data = await response.json();
+
+              setOTP(data.otp);
+              setFormSubmitted(true);
+            }
+          } catch (error) {
+            console.error("Error while fetching OTP:", error);
+          }
+
+          ////
         } else {
           console.error("Request failed with status:", response.status);
         }
@@ -100,106 +113,42 @@ function Form() {
     }
   };
 
-  // const handleButtonClick = async (e) => {
-  //   e.preventDefault()
-  //   const courses = {
-  //     "JEE(MAIN+ADVANCE)": "459",
-  //     "NEET(UG)": "460",
-  //     "PRE Foundation (9 and 10)": "467",
-  //     "PRE Foundation (10)": "468",
-  //   };
-
-  //   const Courses = [
-  //     {
-  //       "JEE(MAIN+ADVANCE)": "459",
-  //       Batch_Id: 809,
-  //     },
-  //     {
-  //       "NEET(UG)": "460",
-  //       Batch_Id: 809,
-  //     },
-  //     {
-  //       "PRE Foundation (9 and 10)": "467",
-  //       Batch_Id: 809,
-  //     },
-  //     {
-  //       "PRE Foundation (10)": "468",
-  //       Batch_Id: 809,
-  //     },
-  //   ];
-
-  //   const selectedCourseCode = courses[selectedCourse];
-
-  //   const details = {
-  //     CLIENTID: "1",
-  //     FLD1: "1",
-  //     FLD2: "1",
-  //     FLD3: "1",
-  //     FLD9: name,
-  //     FLD16: phoneNumber,
-  //     FLD19: selectedCourseCode,
-  //     FLD23: selectedCourse,
-  //     FLD40: selectedState,
-  //   };
-
-  //   const url = "http://localhost:3001/api/OnlineApplication/MemRegApi.aspx";
-  //   const body = new URLSearchParams();
-  //   body.append("CLIENTID", "1");
-  //   body.append("FLD1", "1");
-  //   body.append("FLD2", "1");
-  //   body.append("FLD3", "1");
-  //   body.append("FLD9", name);
-  //   body.append("FLD16", phoneNumber);
-  //   body.append("FLD19", selectedCourseCode);
-  //   body.append("FLD23", "value2");
-  //   body.append("FLD40", "value2");
-
-  //   console.log(body);
-
-  //   // try {
-  //   //   const response = await axios.post(url, body.toString(), {
-  //   //     headers: {
-  //   //       "Content-Type": "application/x-www-form-urlencoded",
-  //   //     },
-  //   //   });
-
-  //   //   // Handle the response as needed
-  //   //   console.log(response.data);
-  //   // } catch (error) {
-  //   //   // Handle errors
-  //   //   console.error(error);
-  //   // }
-  // };
-
   return (
     <div className="bg-white mx-auto px-2 py-2 rounded-md mb-16">
       <h1 className="text-center text-white rounded-md py-1 mb-5 bg-gray-700 px-2 mx-4">
         Talk To Our Expert
       </h1>
 
-      <form className="mx-4" onSubmit={handleSubmit}>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="floating_name"
-            id="floating_name"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-            value={name}
-            onChange={(e) => {
-              e.preventDefault();
-              setName(e.target.value);
-            }}
-          />
-          <label
-            htmlFor="floating_name"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Name
-          </label>
+      {formSubmitted && (
+        <div className="fixed top-5 left-0 right-0 flex justify-center text-white px-4 py-2">
+          {/* Add your OTPBanner content here */}
+          <OTPBanner OTP={OTP} />
         </div>
-        <div className="grid md:grid-cols-2 md:gap-6">
+      )}
+
+      <form className="mx-4" onSubmit={handleSubmit}>
+        <div className="flex flex-col md:flex-row md:space-x-6">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_name"
+              id="floating_name"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              value={name}
+              onChange={(e) => {
+                e.preventDefault();
+                setName(e.target.value);
+              }}
+            />
+            <label
+              htmlFor="floating_name"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-78 lg:top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Name
+            </label>
+          </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="tel"
@@ -217,11 +166,13 @@ function Form() {
             />
             <label
               htmlFor="floating_phone"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 lg:top-1 lg:text-base -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Contact number
             </label>
           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
           <div className="relative z-0 w-full mb-6 group">
             <select
               name="floating_state"
@@ -234,6 +185,7 @@ function Form() {
                 setSelectedState(e.target.value);
               }}
             >
+              <option value="">Select State</option>
               <option value="">Select State</option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
               <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -267,15 +219,14 @@ function Form() {
                 Andaman and Nicobar Islands
               </option>
               <option value="Chandigarh">Chandigarh</option>
-              <option value="Dadra and Nagar Haveli">
-                Dadra and Nagar Haveli
+              <option value="Dadra and Nagar Haveli and Daman and Diu">
+                Dadra and Nagar Haveli and Daman and Diu
               </option>
-              <option value="Daman and Diu">Daman and Diu</option>
               <option value="Delhi">Delhi</option>
               <option value="Lakshadweep">Lakshadweep</option>
               <option value="Puducherry">Puducherry</option>
+              {/* Remaining options */}
             </select>
-
             <label
               htmlFor="floating_state"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -283,8 +234,6 @@ function Form() {
               Select State
             </label>
           </div>
-        </div>
-        <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-6 group">
             <select
               name="floating_course"
@@ -304,7 +253,7 @@ function Form() {
                 PRE Foundation (9 and 10)
               </option>
               <option value="PRE Foundation (10)">PRE Foundation (10)</option>
-              {/* Add course options here */}
+              {/* Remaining options */}
             </select>
             <label
               htmlFor="floating_course"
@@ -314,10 +263,30 @@ function Form() {
             </label>
           </div>
         </div>
+        <div className="relative z-0 w-full mb-6 group">
+          <textarea
+            name="floating_message"
+            id="floating_message"
+            className="block py-2.5 px-0 w-full lg:h-10 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 resize-none appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+            value={message}
+            onChange={(e) => {
+              e.preventDefault();
+              setMessage(e.target.value);
+            }}
+          />
+          <label
+            htmlFor="floating_message"
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Message
+          </label>
+        </div>
         <div className="flex items-center justify-center">
           <button
             type="submit"
-            className="text-white  bg-gray-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gray-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Send Your Query
           </button>
